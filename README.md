@@ -1,6 +1,5 @@
 # Cypress Example 
-This is a first start on Cypress Test Automation Tool 
-**Explore techniques for automated frontend web testing with Cypress and JavaScript**
+This is a first start on Cypress Test Automation Tool to **Explore techniques for automated frontend web testing with Cypress and JavaScript**
 
 ### Installing project dependencies
 ```
