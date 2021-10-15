@@ -38,7 +38,7 @@ $ npm run cypress:firefox
 
 ## Improvements to be done
 To prepare this project to be robust and flxible: 
-* Add new user test only works one time-Prepare the test to generate random valid emails - thsi creates lots of garbage data - or delete users after eahc run wich is not possible on PROD environment through UI
+* Add new user test only works one time - Prepare the test to generate random valid emails - this creates lots of garbage data - or delete users after each run wich is not possible on PROD environment through UI
 * Separate Test Data from Test Scripts
 * Separate Locators from Test Scripts
 * Build Multilingual support project sctucture
