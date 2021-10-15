@@ -1,5 +1,6 @@
 # Cypress Example 
-This is a first start on Cypress Test Automation Tool; 
+This is a first start on Cypress Test Automation Tool 
+**Explore techniques for automated frontend web testing with Cypress and JavaScript**
 
 ### Installing project dependencies
 ```
@@ -36,4 +37,11 @@ $ npm run cypress:chrome
 $ npm run cypress:firefox
 ```
 
-
+## Improvements to be done
+To prepare this project to be robust and flxible: 
+* Separate Test Data from Test Scripts
+* Separate Locators from Test Scripts
+* Build Multilingual support project sctucture
+* Implement Cypress closures to avoid issues form default assynchronous behavior
+* Prepare Test Project for CI/CD pipelines integration (Azure devops + Jenkins)
+* Investigate reporting features

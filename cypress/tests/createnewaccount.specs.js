@@ -5,7 +5,7 @@ context('Create New Account', () => {
         cy.visit('https://pt.tommy.com/')
     });
     describe('Create New Account tests', () => {
-        it.skip('should display new account form errors', () => {
+        it('should display new account form errors', () => {
             //cockies button
             cy.get('[data-testid="Button-primary"]').click()
             //Sign-inRegister
@@ -45,7 +45,7 @@ context('Create New Account', () => {
              cy.get(".error-text").should("be.visible").and("contain", "Oops, it looks like there is already an account with that email address")
 
         });
-        it.skip('create account with valid data', () => {
+        it('create account with valid data', () => {
             //cockies button
             cy.get('[data-testid="Button-primary"]').click()
             //Sign-inRegister
@@ -81,23 +81,26 @@ context('Create New Account', () => {
             cy.get('[data-testid="Button-primary"]').should('contain', 'Sign in').click()
 
             //Go to account page
-            cy.get('.header-my-account-wrapper').click()
-            cy.get('ReactModal__Overlay ReactModal__Overlay--after-open ReactModal__Overlay-custom', { timeout: 10000 }).click(-50, -50,{force: true})
+            cy.get(".header-my-account-wrapper",{timeout:10000}).click()
             
-            cy.get('newsletter__close button--close', { timeout: 10000 }).click({force: true})
+            cy.get(".my-account__navigation > li:nth-child(3) > a").should('contain', 'Address Book').click({force: true})
+            //cy.get(".my-account__navigation > li:nth-child(3) > a").click()
             
-            cy.get(".my-account__navigation > li:nth-child(3) > a").should('contain', 'Address book').click({force: true})
-
-            cy.get('[data-testid="address-add-button"]').should('contain', 'Add new address').click()
+            cy.get('[data-testid="address-add-button"]').click()
 
             cy.get('#firstName').type('Test')
             cy.get('#lastName').type('Cypress')
             cy.get('#address1').type('Stree adress number 123')
             cy.get('#city').type('Porto')
             cy.get('#state').type('Porto')
-            cy.get('#zipCode').type('4000')
+            cy.get('#zipCode').type('4000-100')
 
             cy.get('[data-testid="address-save-button"]').should('contain', 'Save').click()
+
+            cy.get('#country').select('Portugal').should('have.value','PT')
+
+            //delete address after creation so the test can be rerun without creating too much garbage data
+            cy.get('[data-testid="address-delete-button"]').click()
 
         });
     });
